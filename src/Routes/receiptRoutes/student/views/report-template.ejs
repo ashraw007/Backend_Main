@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student-Receipt</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .box {
+        margin: 0 auto;
+        padding: 3%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 500vh;
+        border: 1px solid black;
+        background-color: rgb(186, 235, 235);
+      }
+
+      .text {
+        text-align: center;
+      }
+
+      .move {
+        display: flex;
+        justify-content: space-around;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="text">
+        <img src="http://www.gtbpi.in/img/favicon.png" />
+        <h1>GURU TEGH BAHADUR POLYTECHNIC INSTITUTE</h1>
+        <h2>Receipt ID: <%= receiptId %></h2>
+      </div>
+      <div class="move">
+        <div>
+          <h3>Present Semester: <%= semester %></h3>
+          <h3>For :</h3>
+          <ul>
+            <% for(let forReceipt of forData) { %>
+            <li>
+              <h3><%= forReceipt %></h3>
+            </li>
+            <% } %>
+          </ul>
+        </div>
+        <div>
+          <h3>Roll No : <%= rollNumber %></h3>
+          <h3>Amount Paid: <%= amount %></h3>
+          <h3>Date : <%= date %></h3>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
